@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>130</y>
+      <w>100</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>PrincipalMain
+--
+--
+Main()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>30</y>
+      <w>190</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>MainView
+--
+principalPanel: CardsPanel 
+controller:GameController 
+titulo: Titulos 
+leave: JButton 
+restart: JButton 
+points: JLabel
+inputScore: JTextField 
+--
+MainView(): void
+initGui():void
+setHitsValue(int value):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>450</y>
+      <w>220</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>CardButton
+--
+UNSELECTED_ICON :ImageIcon
+card: Card
+image: Icon
+--
+setSelected(): void
+setSelected(GameState): void
+isCardSelected(): boolean </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>210</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Card
+--
+selected: boolean 
+idCard: int
+countPress: int
+--
+Card(int id): void
+setSelected(boolean): void
+getId(): int
+getSelected(): boolean
+getCountPress(): int
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>420</y>
+      <w>290</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>CardsPanel
+--
+controller: GameController
+buttons: ArrayList&lt;CardButton&gt;
+--
+CardsPanel(GameController)
+paintButtons():void
+buildButtonFromCard(Card card): CardButton</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>0</y>
+      <w>240</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>GameController
+--
+model: GameState
+view: MainView
+--
+reStartGame():void 
+actionPerformed(ActionEvent e):void 
+repaintView(ActionEvent e): void
+mouseClicked(MouseEvent e):void </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>110</y>
+      <w>60</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>40</y>
+      <w>70</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>50.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>220</y>
+      <w>40</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>120</x>
+      <y>330</y>
+      <w>80</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>510</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>160</y>
+      <w>230</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>GameState
+--
+score: int
+cards: ArrayList&lt;Card&gt; 
+numberOfPairs: int
+firstCard: Card
+secondCard: Card
+currentLevel: int
+countPairs: int
+--
+initArray(int): void
+setSelection(Card): void
+areSelectedCardsEqual(): boolean
+validateCards(): boolean
+passLevel(): void
+determinedScore(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>120</y>
+      <w>40</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>170</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;80.0;10.0</additional_attributes>
+  </element>
+</diagram>
